@@ -1,8 +1,7 @@
 
-
 let searchBtn = document.getElementById("search-btn");
 let username = localStorage.getItem("username");
-loader.classList.remove("d-none");
+
 
   if (username) {
     document.getElementById("welcome-msg").textContent = "Welcome, " + username + "!";
@@ -10,12 +9,12 @@ loader.classList.remove("d-none");
 
 
 
-
-
-
 searchBtn.addEventListener("click", function () {
 let searchInput = document.getElementById("search-input").value;
 let loader = document.getElementById("loader1");
+  loader.classList.remove("d-none");
+
+  
 if(!searchInput) {alert("Please type a city"); return;}
 
 //Fetch:
