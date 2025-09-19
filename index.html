@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chamz weather app</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+  <nav class="navbar bg-body-transparent navbar-expand-md navbar-dark fixed-top container">
+    <div class="container">
+      <a class="navbar-brand text-white" href="#">Chamz weather 🌤</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="container-fluid bg-image">
+    <div class="text-center text-white p-5">
+      <h1 class="mt-5 display-5 fw-bold">Enter Your Name <br> To Proceed</h1>
+
+    </div>
+    <div class="
+        d-flex flex-column justify-content-center align-items-center">
+      <input type="text" id="input1" placeholder="Enter your name"
+        class="form-control mb-2 mb-md-2 w-50 w-md-50 w-sm-25">
+      <button class="btn btn-primary" id="login">Continue</button>
+    </div>
+  </div>
+
+
+
+
+
+
+  <script>
+    document.getElementById("login").addEventListener("click", function () {
+      let nameInput = document.getElementById("input1").value.trim();
+
+      if (!nameInput) {
+        alert("Please enter your name");
+        return;
+      }
+
+
+      localStorage.setItem("username", nameInput);
+
+
+      window.location.href = "./pages/weather.html";
+    });
+  </script>
+
+</body>
+
+</html>
