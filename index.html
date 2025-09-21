@@ -4,58 +4,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>chamz weather app</title>
+  <title>Chamz Weather</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="./bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+  <link rel="icon" type="image/png" href="./assets/img/weather-icon.png">
+  <style>
+    .auth-card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+    }
+
+  </style>
+  
 </head>
 
 <body>
   <nav class="navbar bg-body-transparent navbar-expand-md navbar-dark fixed-top container">
-    <div class="container">
-      <a class="navbar-brand text-white" href="#">Chamz weather 🌤</a>
+        <div class="container">
+            <a class="navbar-brand text-white" href="#">Chamz weather 🌤</a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        </div> 
+    </nav>
+
+
+  <div class="container-fluid d-flex align-items-center justify-content-center min-vh-100 bg-image">
+  <!-- Sign Up page -->
+  <form id="signUpSection" class="card shadow p-4 auth-card text-center" style="max-width: 400px; width: 100%;">
+    <h1 class="fw-bold" id="signUpText">Sign up</h1>
+    <p class="text-light">Welcome to Chamz Weather - Let's create your account</p>
+
+    <div class="mb-3">
+      <input type="text" id="signUpInput" placeholder="Name" class="form-control w-75 mx-auto">
     </div>
-  </nav>
-
-  <div class="container-fluid bg-image">
-    <div class="text-center text-white p-5">
-      <h1 class="mt-5 display-5 fw-bold">Enter Your Name <br> To Proceed</h1>
-
+    
+    <div class="mb-3">
+      <input type="password" id="signUpPassword" placeholder="Password" class="form-control w-75 mx-auto">
     </div>
-    <div class="
-        d-flex flex-column justify-content-center align-items-center">
-      <input type="text" id="input1" placeholder="Enter your name"
-        class="form-control mb-2 mb-md-2 w-50 w-md-50 w-sm-25">
-      <button class="btn btn-primary w-25" id="login">Continue</button>
+
+    <button type="button" class="btn btn-dark w-75 mx-auto mb-3" id="signUp">Sign Up</button>
+    <p>Have an account? <a href="#" id="toLoginLink">Sign in</a></p>
+  </form>
+
+
+  <!-- Login page -->
+  <form id="loginSection" class="card shadow p-4 auth-card text-center d-none" style="max-width: 400px; width: 100%;">
+    <h1 class="fw-bold" id="loginText">Login</h1>
+    <p class="text-light">Welcome back to Chamz Weather</p>
+
+    <div class="mb-3">
+      <input type="text" id="loginInput" placeholder="Name" class="form-control w-75 mx-auto">
     </div>
-  </div>
+    <div class="mb-3">
+      <input type="password" id="loginPassword" placeholder="Password" class="form-control w-75 mx-auto">
+    </div>
+
+    <button type="button" class="btn btn-dark w-75 mx-auto mb-3" id="login">Login</button>
+    <p>forgot password? <a href="./pages/forgotpassword.html" id="resetLink">Reset</a></p>
+    <p>Don't have an account? <a href="#" id="toSignUpLink">Sign up</a></p>
+  </form>
+</div>
 
 
 
 
 
-
-  <script>
-    document.getElementById("login").addEventListener("click", function () {
-      let nameInput = document.getElementById("input1").value.trim();
-
-      if (!nameInput) {
-        alert("Please enter your name");
-        return;
-      }
-
-
-      localStorage.setItem("username", nameInput);
-
-
-      window.location.href = "./pages/weather.html";
-    });
-  </script>
-
+  <script src="./assets/js/auth.js"></script>
 </body>
+
 
 </html>
